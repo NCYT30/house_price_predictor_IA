@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicción de Precios de Viviendas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+</head>
+<body>
+
+    <div class="predice">
+
+        <h1>Ingrese los detalles de la vivienda</h1>
+      
+        <form id="form" method="post" action="{% url 'predict' %}">
+          {% csrf_token %}
+      
+          <div class="form-group">
+            <label for="overall_qual">Calidad General:</label>
+            <input type="number" id="overall_qual" name="overall_qual" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="gr_liv_area">Área Habitable:</label>
+            <input type="number" id="gr_liv_area" name="gr_liv_area" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="garage_cars">Número de Coches en el Garaje:</label>
+            <input type="number" id="garage_cars" name="garage_cars" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="garage_area">Área del Garaje:</label>
+            <input type="number" id="garage_area" name="garage_area" required>
+          </div>
+      
+          <button type="submit">Predecir Precio</button>
+
+        </form>
+        
+      
+    </div>
+      
+</body>
+</html>

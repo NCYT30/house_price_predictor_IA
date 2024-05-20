@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicción de Precios de Viviendas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+</head>
+<body>
+    <div class="prediction-container">
+        <h1>Precio Predicho: ${{ price }}</h1>
+        <a href="{% url 'home' %}">Hacer otra predicción</a>
+      </div>
+      
+</body>
+</html>
